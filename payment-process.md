@@ -63,10 +63,10 @@ When DB is update, Query Model will do it's job to display data from DB and publ
 
 ##### What is this all about? Why Event-Driven Architecture?
 
-First, Store Services receive events from previous Services then it store data into it's own local database.
-By which means, each services store it's own data from event-bus where services can store the additional data by adding more fields in it's DB. We call that `Availabiility`.
+First, Store Services receive events from previous Services then it store data into its own local database.
+By which means, each services store its own data from event-bus where services can store the additional data by adding more fields in its DB. We call that `Availabiility`.
 
-Second, all the datas which database are storing can be called as event-logs. It stores all the incoming logging of all events. Therefore, it's also `easy-to-rollback` by using it's event-logs. That's assume if you have a bugs happend in Timestamp `X`, you only need to go to that Timestamp `X` and running events one by one for debugging.
+Second, all the datas which database are storing can be called as event-logs. It stores all the incoming logging of all events. Therefore, its also `easy-to-rollback` by using its event-logs. That's assume if you have a bugs happend in Timestamp `X`, you only need to go to that Timestamp `X` and running events one by one for debugging.
 
 Third, if you are going to create new services for new logic to replace old services. You only need to change the event-bus and Event database point to new services.
 Which is a very smooth and fast `replacement`
