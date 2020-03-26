@@ -53,6 +53,8 @@ Therefore, Command Model stands for receiving data from Bank API and select data
 
 When DB is update, Query Model will do it's job to display data from DB and publish real-time data to the relevant services.
 
+> :reminder_ribbon: Therefore, currency services will handle the logic for keeping fresh rate up to date, meanwhile the comparing process in Command Model will ensure that exchange rates keep within 1%
+
 ### Store && Reward Services
 
 - Our Structure for Store && Reward Servcies
@@ -66,7 +68,7 @@ When DB is update, Query Model will do it's job to display data from DB and publ
 First, Store Services receive events from previous Services then it store data into its own local database.
 By which means, each services store its own data from event-bus where services can store the additional data by adding more fields in its DB. We call that `Availabiility`.
 
-Second, all the datas which database are storing can be called as event-logs. It stores all the incoming logging of all events. Therefore, its also `easy-to-rollback` by using its event-logs. That's assume if you have a bugs happend in Timestamp `X`, you only need to go to that Timestamp `X` and running events one by one for debugging.
+Second, all the datas which database are storing can be called as event-logs. It stores all the incoming logging of all events. Therefore, its also `easy-to-rollback` by using its event-logs. That's assume if you have a bugs happend in Timestamp `X`, you only need to go to that Timestamp `X` and running events one by one for debugging. And this will also keep `Fault tolerant` as low as possible.
 
 Third, if you are going to create new services for new logic to replace old services. You only need to change the event-bus and Event database point to new services.
 Which is a very smooth and fast `replacement`
