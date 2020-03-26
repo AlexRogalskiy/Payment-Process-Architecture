@@ -42,5 +42,13 @@
 - Why and How does the flow works
 
 <p align="center">
-  <img src="https://i.imgur.com/JnUbc4T.png" alt="currency-workflow"/>
+  <img src="https://i.imgur.com/t8mUyH9.png" alt="currency-workflow"/>
 </p>
+
+The idea is the currency services is doing long pulling to get the latest response (let says every 5 seconds)。
+
+After receiving data from Bank API, currency services will do two different things following CQRs standard, and that is update and display.
+
+Therefore, Command Model stands for receiving data from Bank API and select data from DB simultaneously. Command Model will excutes it to find the best currency rate then update DB.
+
+When DB is update, Query Model will do it's job to display data from DB and publish real-time data to the relevant services.
