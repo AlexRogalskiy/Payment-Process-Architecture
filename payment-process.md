@@ -36,7 +36,7 @@
 - Our Structure for Currency Services
 
 <p align="center">
-  <img src="https://i.imgur.com/dczhgXE.png" alt="currency-services"/>
+  <img src="https://i.imgur.com/fQvorMs.png" alt="currency-services"/>
 </p>
 
 - Why and How does the flow works
@@ -79,7 +79,7 @@ Event-Driven gives you a transaction guarantee are either at least one or at mos
 ## Whole System
 
 <p align="center">
-  <img src="https://i.imgur.com/gjKXTas.png" alt="entire-system">
+  <img src="https://i.imgur.com/iz9QXu5.png" alt="entire-system">
 </p>
 
 1. Frist, Client sending request for storing X currency.
